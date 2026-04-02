@@ -59,6 +59,36 @@ export default function DadadayPage() {
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
       <header className="max-w-2xl mx-auto pt-24 pb-16 px-6 relative">
+      {/* SECCIÓN DE VÍDEOS UNDERGROUND */}
+        <section className="max-w-2xl mx-auto px-6 mb-16 grid grid-cols-12 gap-2 h-[400px]">
+
+          {/* Vídeo Principal (Grande) */}
+          <div className="col-span-8 relative overflow-hidden border border-zinc-800 grayscale hover:grayscale-0 transition-all duration-700">
+            <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-70 hover:opacity-100 transition-opacity">
+              <source src="/video1.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute top-2 left-2 text-[8px] text-green-500 font-mono bg-black/50 px-1">REC_001.MOV</div>
+          </div>
+
+          {/* Columna Lateral con segundo vídeo y un hueco de diseño */}
+          <div className="col-span-4 flex flex-col gap-2">
+            <div className="flex-1 relative overflow-hidden border border-zinc-800 grayscale hover:grayscale-0 transition-all duration-700">
+              <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-70 hover:opacity-100 transition-opacity">
+                <source src="/video2.mp4" type="video/mp4" />
+              </video>
+              <div className="absolute top-2 left-2 text-[8px] text-green-500 font-mono bg-black/50 px-1">LIVE_FEED_02</div>
+            </div>
+
+            {/* Hueco estético con un texto random de sistema */}
+            <div className="h-24 bg-zinc-900/30 border border-zinc-800 p-2 flex flex-col justify-end">
+              <div className="text-[7px] text-zinc-600 leading-none">
+                DATA_STREAM_CONNECTED<br/>
+                ENCRYPTED_SIGNAL_STABLE<br/>
+                LOCATION_IDENTIFIED: MAD_DISTRICT
+              </div>
+            </div>
+          </div>
+        </section>
         <div className="absolute top-10 left-6 text-[10px] text-zinc-700 tracking-tighter">
           SYSTEM_VERSION: 2.0.26 // B-DAY_EDITION
         </div>
