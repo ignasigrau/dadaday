@@ -88,8 +88,8 @@ export default function DadadayPage() {
       <header className="max-w-xl mx-auto pt-16 pb-12 text-center">
         <h1 className="text-7xl font-black tracking-tighter italic mb-4">DADA<span className="text-zinc-700">DAY</span></h1>
         <div className="flex justify-center gap-6 text-[10px] font-bold uppercase tracking-[0.3em] text-zinc-500">
-          <span className="flex items-center gap-2"><Calendar size={12}/> 15 JUN</span>
-          <span className="flex items-center gap-2"><MapPin size={12}/> MADRID</span>
+          <span className="flex items-center gap-2"><Calendar size={12}/> 12 ABRIL</span>
+          <span className="flex items-center gap-2"><MapPin size={12}/> BARCELONA</span>
         </div>
       </header>
 
