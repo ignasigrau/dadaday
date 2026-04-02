@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { Ticket, Calendar, MapPin, CheckCircle, Loader2 } from 'lucide-react';
+// @ts-ignore
 import confetti from 'canvas-confetti';
 import { db } from './lib/firebase';
 import { doc, getDoc, updateDoc, collection, addDoc, increment } from 'firebase/firestore';
