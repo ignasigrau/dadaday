@@ -59,32 +59,67 @@ export default function DadadayPage() {
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
       <header className="max-w-2xl mx-auto pt-24 pb-16 px-6 relative">
-      {/* SECCIÓN DE VÍDEOS UNDERGROUND */}
-        <section className="max-w-2xl mx-auto px-6 mb-16 grid grid-cols-12 gap-2 h-[400px]">
+              {/* SECCIÓN DE VÍDEOS UNDERGROUND (SIMÉTRICA Y A COLOR) */}
+        <section className="max-w-2xl mx-auto px-6 mb-16 grid grid-cols-2 gap-3 h-[300px] md:h-[400px]">
 
-          {/* Vídeo Principal (Grande) */}
-          <div className="col-span-8 relative overflow-hidden border border-zinc-800 grayscale hover:grayscale-0 transition-all duration-700">
-            <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-70 hover:opacity-100 transition-opacity">
-              <source src="/video1.mp4" type="video/mp4" />
-            </video>
-            <div className="absolute top-2 left-2 text-[8px] text-green-500 font-mono bg-black/50 px-1">REC_001.MOV</div>
-          </div>
-
-          {/* Columna Lateral con segundo vídeo y un hueco de diseño */}
-          <div className="col-span-4 flex flex-col gap-2">
-            <div className="flex-1 relative overflow-hidden border border-zinc-800 grayscale hover:grayscale-0 transition-all duration-700">
-              <video autoPlay loop muted playsInline className="w-full h-full object-cover opacity-70 hover:opacity-100 transition-opacity">
-                <source src="/video2.mp4" type="video/mp4" />
+          {/* Pantalla de Vídeo 1 (A Color) */}
+          <div className="relative overflow-hidden border border-zinc-800 bg-zinc-950 group">
+            {/* Contenedor del vídeo para que no se corte feo */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              >
+                {/* Asegúrate de que el nombre del archivo sea correcto en public */}
+                <source src="/video1.mp4" type="video/mp4" />
               </video>
-              <div className="absolute top-2 left-2 text-[8px] text-green-500 font-mono bg-black/50 px-1">LIVE_FEED_02</div>
             </div>
 
-            {/* Hueco estético con un texto random de sistema */}
-            <div className="h-24 bg-zinc-900/30 border border-zinc-800 p-2 flex flex-col justify-end">
-              <div className="text-[7px] text-zinc-600 leading-none">
-                DATA_STREAM_CONNECTED<br/>
-                ENCRYPTED_SIGNAL_STABLE<br/>
-                LOCATION_IDENTIFIED: MAD_DISTRICT
+            {/* Marcos y Textos Estilo CCTV */}
+            <div className="absolute inset-x-0 bottom-0 top-0 pointer-events-none p-3 flex flex-col justify-between">
+              <div className="flex justify-between items-start text-xs font-mono text-white/50 bg-black/50 px-2 py-1">
+                <span>[CAM 001]</span>
+                <span className="text-[9px]">LIVE_FEED</span>
+              </div>
+
+              <div className="text-[10px] text-zinc-600 bg-black/60 p-2 leading-none border-t border-zinc-800">
+                DATA_STREAM: CONNECTED<br/>
+                ENCRYPTION: AES-256<br/>
+                STATUS: STABLE_LINK
+              </div>
+            </div>
+          </div>
+
+          {/* Pantalla de Vídeo 2 (A Color, Gemela) */}
+          <div className="relative overflow-hidden border border-zinc-800 bg-zinc-950 group">
+            {/* Contenedor del vídeo para que no se corte feo */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+              >
+                {/* Asegúrate de que el nombre del archivo sea correcto en public */}
+                <source src="/video2.mp4" type="video/mp4" />
+              </video>
+            </div>
+
+            {/* Marcos y Textos Estilo CCTV */}
+            <div className="absolute inset-x-0 bottom-0 top-0 pointer-events-none p-3 flex flex-col justify-between">
+              <div className="flex justify-between items-start text-xs font-mono text-white/50 bg-black/50 px-2 py-1">
+                <span>[CAM 002]</span>
+                <span className="text-[9px] text-red-500 animate-pulse">● REC</span>
+              </div>
+
+              <div className="text-[10px] text-zinc-600 bg-black/60 p-2 leading-none border-t border-zinc-800">
+                LOCATION: MAD_WAREHOUSE<br/>
+                TIME: {new Date().toLocaleDateString('es-ES', { weekday: 'short', month: 'numeric', day: 'numeric', hour: 'numeric', minute: 'numeric' })}<br/>
+                STREAM_ID: B-DAY_PROJ_92
               </div>
             </div>
           </div>
