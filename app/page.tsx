@@ -58,22 +58,8 @@ export default function DadadayPage() {
       {/* BACKGROUND GRAIN OVERLAY */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
-      {/* 1. SECCIÓN DE VÍDEOS (TRIPLE VIDEO GRID - OPTIMIZADO) */}
-      <section className="max-w-3xl mx-auto px-6 pt-12 space-y-3">
-        {/* Contenedor del Video 3 Superior - AHORA SIMÉTRICO Y CENTRADO */}
-        <div className="aspect-video w-full flex items-center justify-center overflow-hidden border border-zinc-800 bg-black group relative">
-          <video
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="w-full h-full object-contain transition-transform duration-700"
-          >
-            <source src="/video3.mp4" type="video/mp4" />
-          </video>
-        </div>
-
-        {/* Videos 1 y 2 en paralelo - También con object-contain para no cortar */}
+      {/* 1. SECCIÓN DE VÍDEOS (GRID GEMELO - OPTIMIZADO) */}
+      <section className="max-w-3xl mx-auto px-6 pt-12">
         <div className="grid grid-cols-2 gap-3 aspect-[2/1] md:aspect-[2/1.2]">
           <div className="relative overflow-hidden border border-zinc-800 bg-zinc-950 group flex items-center justify-center">
             <video
@@ -85,7 +71,6 @@ export default function DadadayPage() {
             >
               <source src="/video1.mp4" type="video/mp4" />
             </video>
-            {/* Superposición CCTV para Videos Inferiores */}
             <div className="absolute inset-x-2 top-2 pointer-events-none p-1 flex justify-start">
               <span className="text-[9px] font-mono text-white/50 bg-black/50 px-1 py-0.5">[CAM_001]</span>
             </div>
@@ -101,7 +86,6 @@ export default function DadadayPage() {
             >
               <source src="/video2.mp4" type="video/mp4" />
             </video>
-            {/* Superposición CCTV para Videos Inferiores */}
             <div className="absolute inset-x-2 top-2 pointer-events-none p-1 flex justify-between">
               <span className="text-[9px] font-mono text-white/50 bg-black/50 px-1 py-0.5">[CAM_002]</span>
               <span className="text-red-500 animate-pulse text-[9px]">● REC</span>
@@ -121,14 +105,15 @@ export default function DadadayPage() {
           <span className="text-green-500 animate-pulse">_</span>
         </h1>
 
-        {/* DESCRIPCIÓN ÉPICA SIN TÍTULO */}
+        {/* DESCRIPCIÓN ACTUALIZADA */}
         <div className="mb-12 border-l-2 border-green-500 pl-6 py-2">
           <p className="text-[11px] md:text-[12px] leading-relaxed text-zinc-400 font-mono uppercase tracking-wider">
-            <span className="text-zinc-200 font-bold underline">Carlotta of the House Gilé</span>, First of her Name, <span className="text-zinc-500">The Engineer</span>,
-            Queen of the Italians, the Spanish and the First Men, Queen of Barcelona,
-            Khaleese of the Great High Torino, Protector of the Eremo Realm,
-            Lady Regent of Piemonte and Catalunya, <span className="text-green-900 bg-green-500/10 px-1 italic">Breaker of Chains (BSC Chains)</span>,
-            Mother of Dragons (<span className="text-white font-bold italic">Sonne and Rubi</span>).
+            <span className="text-zinc-200 font-bold underline italic">Carlotta of the House Gilé</span>, First of her Name,
+            the <span className="text-white">Seeker of Truth</span>, Queen of the Italians, the Spanish and the First Men,
+            Lady of Barcelona, Khaleesi of Great High Torino, Protector of the Eremo Realm,
+            Lady Regent of Piemonte and Catalunya, <span className="text-zinc-500">Breaker of Chains</span>,
+            Mother of Dragons (<span className="text-white font-bold">Sonne and Rubi</span>),
+            <span className="text-green-500/80"> summon you to celebrate her glorious name day (birthday).</span>
           </p>
         </div>
 
