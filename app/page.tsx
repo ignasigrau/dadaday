@@ -58,42 +58,53 @@ export default function DadadayPage() {
       {/* BACKGROUND GRAIN OVERLAY */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
-      {/* 1. SECCIÓN DE VÍDEOS (TRIPLE VIDEO GRID) */}
-      <section className="max-w-2xl mx-auto px-6 pt-12 space-y-3">
-        {/* Video 3 Superior (Grande) */}
-        <div className="relative h-[250px] md:h-[350px] overflow-hidden border border-zinc-800 bg-zinc-950 group">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+      {/* 1. SECCIÓN DE VÍDEOS (TRIPLE VIDEO GRID - OPTIMIZADO) */}
+      <section className="max-w-3xl mx-auto px-6 pt-12 space-y-3">
+        {/* Contenedor del Video 3 Superior - AHORA SIMÉTRICO Y CENTRADO */}
+        <div className="aspect-video w-full flex items-center justify-center overflow-hidden border border-zinc-800 bg-black group relative">
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-contain transition-transform duration-700"
+          >
             <source src="/video3.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-0 pointer-events-none p-3 flex flex-col justify-between">
-            <div className="flex justify-between text-xs font-mono text-white/50 bg-black/50 px-2 py-1 w-fit">
-              <span>[MAIN_FEED_003]</span>
-            </div>
-          </div>
         </div>
 
-        {/* Videos 1 y 2 en paralelo */}
-        <div className="grid grid-cols-2 gap-3 h-[200px] md:h-[300px]">
-          <div className="relative overflow-hidden border border-zinc-800 bg-zinc-950 group">
-            <video autoPlay loop muted playsInline className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+        {/* Videos 1 y 2 en paralelo - También con object-contain para no cortar */}
+        <div className="grid grid-cols-2 gap-3 aspect-[2/1] md:aspect-[2/1.2]">
+          <div className="relative overflow-hidden border border-zinc-800 bg-zinc-950 group flex items-center justify-center">
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-contain transition-transform duration-700"
+            >
               <source src="/video1.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 pointer-events-none p-3 flex flex-col justify-between">
-              <div className="flex justify-between text-[10px] font-mono text-white/50 bg-black/50 px-2 py-1">
-                <span>[CAM_001]</span>
-              </div>
+            {/* Superposición CCTV para Videos Inferiores */}
+            <div className="absolute inset-x-2 top-2 pointer-events-none p-1 flex justify-start">
+              <span className="text-[9px] font-mono text-white/50 bg-black/50 px-1 py-0.5">[CAM_001]</span>
             </div>
           </div>
 
-          <div className="relative overflow-hidden border border-zinc-800 bg-zinc-950 group">
-            <video autoPlay loop muted playsInline className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+          <div className="relative overflow-hidden border border-zinc-800 bg-zinc-950 group flex items-center justify-center">
+            <video
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="w-full h-full object-contain transition-transform duration-700"
+            >
               <source src="/video2.mp4" type="video/mp4" />
             </video>
-            <div className="absolute inset-0 pointer-events-none p-3 flex flex-col justify-between">
-              <div className="flex justify-between text-[10px] font-mono text-white/50 bg-black/50 px-2 py-1">
-                <span>[CAM_002]</span>
-                <span className="text-red-500 animate-pulse">●</span>
-              </div>
+            {/* Superposición CCTV para Videos Inferiores */}
+            <div className="absolute inset-x-2 top-2 pointer-events-none p-1 flex justify-between">
+              <span className="text-[9px] font-mono text-white/50 bg-black/50 px-1 py-0.5">[CAM_002]</span>
+              <span className="text-red-500 animate-pulse text-[9px]">● REC</span>
             </div>
           </div>
         </div>
@@ -121,7 +132,7 @@ export default function DadadayPage() {
           </p>
         </div>
 
-        {/* INFO DEL EVENTO ACTUALIZADA */}
+        {/* INFO DEL EVENTO */}
         <div className="flex flex-col gap-2 text-[11px] font-bold uppercase tracking-widest text-zinc-400 border-t border-zinc-900 pt-8">
           <div className="flex items-center gap-3"><Calendar size={12} className="text-zinc-600"/> DATE: 12_04_2026</div>
           <div className="flex items-center gap-3"><MapPin size={12} className="text-zinc-600"/> LOC: Da Nanni Trattoria & Pizzeria - Manso</div>
@@ -129,7 +140,7 @@ export default function DadadayPage() {
         </div>
       </header>
 
-      {/* 3. TICKETS CON PRECIOS ACTUALIZADOS */}
+      {/* 3. TICKETS */}
       <main className="max-w-2xl mx-auto px-6 pb-32 relative">
         <div className="bg-zinc-900/20 border-y border-zinc-800 py-2 mb-10 overflow-hidden whitespace-nowrap">
           <div className="animate-marquee inline-block text-[10px] text-zinc-600 tracking-[0.5em]">
