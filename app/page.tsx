@@ -58,28 +58,42 @@ export default function DadadayPage() {
       {/* BACKGROUND GRAIN OVERLAY */}
       <div className="fixed inset-0 pointer-events-none opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
 
-      {/* 1. SECCIÓN DE VÍDEOS (TOP) */}
-      <section className="max-w-2xl mx-auto px-6 pt-12 grid grid-cols-2 gap-3 h-[300px] md:h-[400px]">
-        <div className="relative overflow-hidden border border-zinc-800 bg-zinc-950 group">
+      {/* 1. SECCIÓN DE VÍDEOS (TRIPLE VIDEO GRID) */}
+      <section className="max-w-2xl mx-auto px-6 pt-12 space-y-3">
+        {/* Video 3 Superior (Grande) */}
+        <div className="relative h-[250px] md:h-[350px] overflow-hidden border border-zinc-800 bg-zinc-950 group">
           <video autoPlay loop muted playsInline className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <source src="/video1.mp4" type="video/mp4" />
+            <source src="/video3.mp4" type="video/mp4" />
           </video>
-          <div className="absolute inset-x-0 bottom-0 top-0 pointer-events-none p-3 flex flex-col justify-between">
-            <div className="flex justify-between text-xs font-mono text-white/50 bg-black/50 px-2 py-1">
-              <span>[CAM 001]</span>
-              <span className="text-[9px]">LIVE_FEED</span>
+          <div className="absolute inset-0 pointer-events-none p-3 flex flex-col justify-between">
+            <div className="flex justify-between text-xs font-mono text-white/50 bg-black/50 px-2 py-1 w-fit">
+              <span>[MAIN_FEED_003]</span>
             </div>
           </div>
         </div>
 
-        <div className="relative overflow-hidden border border-zinc-800 bg-zinc-950 group">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
-            <source src="/video2.mp4" type="video/mp4" />
-          </video>
-          <div className="absolute inset-x-0 bottom-0 top-0 pointer-events-none p-3 flex flex-col justify-between">
-            <div className="flex justify-between text-xs font-mono text-white/50 bg-black/50 px-2 py-1">
-              <span>[CAM 002]</span>
-              <span className="text-[9px] text-red-500 animate-pulse">● REC</span>
+        {/* Videos 1 y 2 en paralelo */}
+        <div className="grid grid-cols-2 gap-3 h-[200px] md:h-[300px]">
+          <div className="relative overflow-hidden border border-zinc-800 bg-zinc-950 group">
+            <video autoPlay loop muted playsInline className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <source src="/video1.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 pointer-events-none p-3 flex flex-col justify-between">
+              <div className="flex justify-between text-[10px] font-mono text-white/50 bg-black/50 px-2 py-1">
+                <span>[CAM_001]</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="relative overflow-hidden border border-zinc-800 bg-zinc-950 group">
+            <video autoPlay loop muted playsInline className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+              <source src="/video2.mp4" type="video/mp4" />
+            </video>
+            <div className="absolute inset-0 pointer-events-none p-3 flex flex-col justify-between">
+              <div className="flex justify-between text-[10px] font-mono text-white/50 bg-black/50 px-2 py-1">
+                <span>[CAM_002]</span>
+                <span className="text-red-500 animate-pulse">●</span>
+              </div>
             </div>
           </div>
         </div>
@@ -96,26 +110,26 @@ export default function DadadayPage() {
           <span className="text-green-500 animate-pulse">_</span>
         </h1>
 
+        {/* DESCRIPCIÓN ÉPICA SIN TÍTULO */}
         <div className="mb-12 border-l-2 border-green-500 pl-6 py-2">
-          <p className="text-[11px] leading-relaxed text-zinc-400 font-mono uppercase tracking-wider">
-            <span className="text-white font-black block mb-2 text-sm italic">Subject_Profile:</span>
+          <p className="text-[11px] md:text-[12px] leading-relaxed text-zinc-400 font-mono uppercase tracking-wider">
             <span className="text-zinc-200 font-bold underline">Carlotta of the House Gilé</span>, First of her Name, <span className="text-zinc-500">The Engineer</span>,
             Queen of the Italians, the Spanish and the First Men, Queen of Barcelona,
             Khaleese of the Great High Torino, Protector of the Eremo Realm,
-            Lady Regent of Piemonte and Catalunya, <span className="text-green-900 bg-green-500/10 px-1">Breaker of Chains (BSC Chains)</span>,
-            Mother of Dragons (<span className="text-zinc-200 italic font-bold text-white">Sonne and Rubi</span>).
+            Lady Regent of Piemonte and Catalunya, <span className="text-green-900 bg-green-500/10 px-1 italic">Breaker of Chains (BSC Chains)</span>,
+            Mother of Dragons (<span className="text-white font-bold italic">Sonne and Rubi</span>).
           </p>
         </div>
 
-        {/* INFO DEL EVENTO */}
+        {/* INFO DEL EVENTO ACTUALIZADA */}
         <div className="flex flex-col gap-2 text-[11px] font-bold uppercase tracking-widest text-zinc-400 border-t border-zinc-900 pt-8">
           <div className="flex items-center gap-3"><Calendar size={12} className="text-zinc-600"/> DATE: 12_04_2026</div>
-          <div className="flex items-center gap-3"><MapPin size={12} className="text-zinc-600"/> LOC: BARCELONA_UNDERGROUND</div>
-          <div className="flex items-center gap-3 text-green-800"><Activity size={12}/> BPM: 145_STEADY</div>
+          <div className="flex items-center gap-3"><MapPin size={12} className="text-zinc-600"/> LOC: Da Nanni Trattoria & Pizzeria - Manso</div>
+          <div className="flex items-center gap-3 text-green-800"><Activity size={12}/> BPM: 138_STEADY</div>
         </div>
       </header>
 
-      {/* 3. TICKETS */}
+      {/* 3. TICKETS CON PRECIOS ACTUALIZADOS */}
       <main className="max-w-2xl mx-auto px-6 pb-32 relative">
         <div className="bg-zinc-900/20 border-y border-zinc-800 py-2 mb-10 overflow-hidden whitespace-nowrap">
           <div className="animate-marquee inline-block text-[10px] text-zinc-600 tracking-[0.5em]">
@@ -125,9 +139,9 @@ export default function DadadayPage() {
 
         <div className="grid gap-2">
           {[
-            { id: 'early', name: '001_EARLY_ACCESS', sold: stats?.early_sold, total: stats?.early_total },
-            { id: 'first', name: '002_MAIN_RELEASE', sold: stats?.first_sold, total: stats?.first_total },
-            { id: 'last', name: '003_FINAL_CALL', sold: stats?.last_sold, total: stats?.last_total },
+            { id: 'early', name: '001_EARLY_ACCESS', price: '15', sold: stats?.early_sold, total: stats?.early_total },
+            { id: 'first', name: '002_MAIN_RELEASE', price: '20', sold: stats?.first_sold, total: stats?.first_total },
+            { id: 'last', name: '003_FINAL_CALL', price: '25', sold: stats?.last_sold, total: stats?.last_total },
           ].map((t) => {
             const isSoldOut = (t.sold || 0) >= (t.total || 0);
             return (
@@ -145,7 +159,7 @@ export default function DadadayPage() {
                   <p className="text-[14px] font-black tracking-tighter">{t.name}</p>
                   <p className="text-[10px] mt-1 opacity-60 uppercase">{isSoldOut ? 'STATUS: SOLD_OUT' : 'STATUS: AVAILABLE'}</p>
                 </div>
-                <div className="text-xl font-black">€00,00</div>
+                <div className="text-xl font-black">€{t.price},00</div>
               </button>
             );
           })}
